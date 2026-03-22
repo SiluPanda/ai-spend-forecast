@@ -9,7 +9,7 @@ export function toChartData(
 ): ChartPoint[] {
   const includeHistory = options?.includeHistory ?? true;
   const confidenceLevels = result.predictions[0]?.bounds.map(b => b.level) ?? [];
-  const confidenceLevel = options?.confidenceLevel ?? Math.max(...confidenceLevels);
+  const confidenceLevel = options?.confidenceLevel ?? (confidenceLevels.length > 0 ? Math.max(...confidenceLevels) : 0.95);
 
   const points: ChartPoint[] = [];
 

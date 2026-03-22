@@ -75,7 +75,7 @@ export function regressionPredictionBounds(
   const tc = tCritical(df, confidenceLevel);
 
   // SE of forecast includes prediction uncertainty
-  const leverage = 1 + 1 / n + (forecastX - meanX) ** 2 / ssX;
+  const leverage = ssX === 0 ? 1 + 1 / n : 1 + 1 / n + (forecastX - meanX) ** 2 / ssX;
   const seForecast = ser * Math.sqrt(leverage);
   const margin = tc * seForecast;
 

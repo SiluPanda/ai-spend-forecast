@@ -57,19 +57,21 @@ export function computeWma(input: WmaInput): ForecastPoint[] {
     let predicted = wmaValue;
 
     // Apply day-of-week weights if provided
+    let effectiveStdDev = stdDev;
     if (input.dayOfWeekWeights) {
       const dateObj = new Date(dates[i]);
       const dow = dateObj.getUTCDay();
       const dowWeight = input.dayOfWeekWeights[dow];
       if (dowWeight !== undefined) {
         predicted *= dowWeight;
+        effectiveStdDev *= Math.abs(dowWeight);
       }
     }
 
     predicted = Math.max(floor, predicted);
 
     const bounds: ConfidenceBound[] = confidenceLevels.map(level => {
-      const { lower, upper } = maConfidenceBounds(predicted, stdDev, level, floor);
+      const { lower, upper } = maConfidenceBounds(predicted, effectiveStdDev, level, floor);
       return { level, lower, upper };
     });
 
