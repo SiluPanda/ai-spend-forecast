@@ -3,6 +3,7 @@
 Predict future AI API spending from historical usage data using moving averages, linear regression, and confidence intervals.
 
 [![npm version](https://img.shields.io/npm/v/ai-spend-forecast.svg)](https://www.npmjs.com/package/ai-spend-forecast)
+[![npm downloads](https://img.shields.io/npm/dt/ai-spend-forecast.svg)](https://www.npmjs.com/package/ai-spend-forecast)
 [![license](https://img.shields.io/npm/l/ai-spend-forecast.svg)](https://github.com/SiluPanda/ai-spend-forecast/blob/master/LICENSE)
 [![node](https://img.shields.io/node/v/ai-spend-forecast.svg)](https://nodejs.org)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue.svg)](https://www.typescriptlang.org/)
