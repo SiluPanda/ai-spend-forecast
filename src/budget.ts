@@ -36,7 +36,7 @@ export function alertOnBudget(
   // Calculate days elapsed and remaining
   const startDate = new Date(periodStart);
   const endDate = new Date(periodEnd);
-  const today = new Date(formatDateOnly(now));
+  const today = new Date(budget.referenceDate ?? formatDateOnly(now));
 
   const effectiveToday = today > endDate ? endDate : today < startDate ? startDate : today;
   const daysElapsed = Math.max(1, Math.ceil((effectiveToday.getTime() - startDate.getTime()) / (86400000)) + 1);

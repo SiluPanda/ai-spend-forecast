@@ -212,6 +212,9 @@ export interface BudgetConfig {
 
   /** Threshold (0-1) at which to trigger 'critical'. Default: 1.0. */
   criticalThreshold?: number;
+
+  /** Override the current date for budget calculations (ISO 8601 YYYY-MM-DD). */
+  referenceDate?: string;
 }
 
 export interface BudgetAlert {
