@@ -14,6 +14,7 @@ describe('alertOnBudget', () => {
     amount: 5000,
     periodStart: '2026-03-01',
     periodEnd: '2026-03-31',
+    referenceDate: '2026-03-20',
   };
 
   it('returns on_track when under budget', () => {
